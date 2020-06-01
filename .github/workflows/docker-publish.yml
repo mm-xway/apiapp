@@ -1,4 +1,4 @@
-name: Docker
+name: Build and Deploy API App
 
 on:
   push:
@@ -74,3 +74,25 @@ jobs:
 
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
+  
+  # Deploy container 
+  deploy: 
+    # Requires push step to finish
+    needs: push
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Run SSH command
+      uses: garygrossgarten/github-action-ssh@v0.5.0
+      with:
+        # Command to execute on the remote server.
+        command: sh /datadrive/utility/pull-and-run-apiapp.sh
+        # Hostname or IP address of the server.
+        host: ${{ secrets.AZUREDEMO_VM }}
+        # Username for authentication.
+        username: ${{ secrets.AZUREDEMO_VM_USERNAME }}
+        password: ${{ secrets.AZUREDEMO_VM_PASSWORD }}
+
