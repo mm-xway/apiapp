@@ -106,19 +106,11 @@ jobs:
       uses: fjogeleit/http-request-action@1.3.0
       with:
         # Request URL
-        url: 
+        url: 'http://apimdemo.centralindia.cloudapp.azure.com:19085/ApiCatalog'
         # Request Method
-        method: # optional, default is POST
+        method: POST
         # Content Type
-        contentType: # optional, default is application/json
+        contentType: application/json
         # Request Body as JSON String
-        data: # optional, default is {}
-        # Auth Username
-        username: # optional
-        # Auth Password
-        password: # optional
-        # Request Timeout in Sec
-        timeout: # optional, default is 5000
-        # Bearer Authentication Token
-        bearerToken: # optional
+        data: '{"apiManagerHost": "${{ secrets.AZUREDEMO_VM }}","apiAdminUsername": "${{ secrets.AZUREDEMO_VM_USERNAME }}","apiAdminPassword": "${{ secrets.AZUREDEMO_VM_PASSWORD }}","organizationName": "API Development","apiName": "Backend Greet","swaggerURL": "http://apimdemo.centralindia.cloudapp.azure.com:19088/apidoc/swagger.json"}'
 
