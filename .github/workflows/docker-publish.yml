@@ -95,4 +95,30 @@ jobs:
         # Username for authentication.
         username: ${{ secrets.AZUREDEMO_VM_USERNAME }}
         password: ${{ secrets.AZUREDEMO_VM_PASSWORD }}
+  
+  # Add in API Manager Catalog - Backend API
+  apim:
+    # Requires deploy step to complete 
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: HTTP Request Action
+      uses: fjogeleit/http-request-action@1.3.0
+      with:
+        # Request URL
+        url: 
+        # Request Method
+        method: # optional, default is POST
+        # Content Type
+        contentType: # optional, default is application/json
+        # Request Body as JSON String
+        data: # optional, default is {}
+        # Auth Username
+        username: # optional
+        # Auth Password
+        password: # optional
+        # Request Timeout in Sec
+        timeout: # optional, default is 5000
+        # Bearer Authentication Token
+        bearerToken: # optional
 
