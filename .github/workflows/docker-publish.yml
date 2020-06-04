@@ -112,5 +112,5 @@ jobs:
         # Content Type
         contentType: application/json
         # Request Body as JSON String
-        data: '{"apiManagerHost": "${{ secrets.AZUREDEMO_VM }}","apiAdminUsername": "${{ secrets.AZUREDEMO_VM_USERNAME }}","apiAdminPassword": "${{ secrets.AZUREDEMO_VM_PASSWORD }}","organizationName": "API Development","apiName": "Backend Greet","swaggerURL": "http://apimdemo.centralindia.cloudapp.azure.com:19088/apidoc/swagger.json"}'
+        data: '{"apiManagerHost": "${{ secrets.AZUREDEMO_VM }}","apiAdminUsername": "${{ secrets.APIM_USERNAME }}","apiAdminPassword": "${{ secrets.APIM_PASSWORD }}","organizationName": "API Development","apiName": "Backend Greet","swaggerURL": "http://apimdemo.centralindia.cloudapp.azure.com:19088/apidoc/swagger.json"}'
 
