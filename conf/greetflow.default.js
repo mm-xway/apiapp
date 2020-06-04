@@ -4,6 +4,6 @@
  */
 module.exports = {
 	helloworld: {
-		salutation: 'Hello'
+		salutation: 'Hey'
 	}
 };
