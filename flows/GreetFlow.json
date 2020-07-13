@@ -99,18 +99,18 @@
 			"method": "format",
 			"parameters": [
 				{
-					"name": "template",
-					"type": "string",
-					"value": "\"{{data.config.helloworld.salutation}} {{data.params.username}}\"",
-					"metaName": "template",
-					"metaDescription": "The Mustache template. e.g. `Hi {{data.user}}`"
-				},
-				{
 					"name": "data",
 					"type": "jsonpath",
 					"value": "$",
 					"metaName": "data",
 					"metaDescription": "The value to assign to the \"data\" variable in the template"
+				},
+				{
+					"name": "template",
+					"type": "string",
+					"value": "\"Hello {{data.params.username}}\"",
+					"metaName": "template",
+					"metaDescription": "The Mustache template. e.g. `Hi {{data.user}}`"
 				}
 			],
 			"outputs": {
