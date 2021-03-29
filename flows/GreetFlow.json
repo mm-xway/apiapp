@@ -108,7 +108,7 @@
 				{
 					"name": "template",
 					"type": "string",
-					"value": "\"Hi {{data.params.username}}\"",
+					"value": "\"Hello {{data.params.username}}\"",
 					"metaName": "Template",
 					"metaDescription": "The Mustache template. e.g. `Hi {{data.user}}`."
 				}
